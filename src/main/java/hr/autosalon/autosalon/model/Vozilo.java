@@ -16,6 +16,8 @@ import javax.persistence.Table;
  *
  * @author TRTANJ
  */
+@lombok.Getter
+@lombok.Setter
 @Entity
 @Table(name = "vozilo")
 public class Vozilo extends Entitet{
@@ -28,104 +30,15 @@ public class Vozilo extends Entitet{
     private BigDecimal cijena;
     private Boolean uvoz;
     
-    @ManyToOne
-    private Kupac kupac;
-
-    public String getMarka() {
-        return marka;
-    }
-
-    public void setMarka(String marka) {
-        this.marka = marka;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public Integer getGodiste() {
-        return godiste;
-    }
-
-    public void setGodiste(Integer godiste) {
-        this.godiste = godiste;
-    }
-
-    public Integer getKilometraza() {
-        return kilometraza;
-    }
-
-    public void setKilometraza(Integer kilometraza) {
-        this.kilometraza = kilometraza;
-    }
-
-    public BigDecimal getCijena() {
-        return cijena;
-    }
-
-    public void setCijena(BigDecimal cijena) {
-        this.cijena = cijena;
-    }
-
-    public Boolean getUvoz() {
-        return uvoz;
-    }
-
-    public void setUvoz(Boolean uvoz) {
-        this.uvoz = uvoz;
-    }
-
-    public Kupac getKupac() {
-        return kupac;
-    }
-
-    public void setKupac(Kupac kupac) {
-        this.kupac = kupac;
-    }
-
-    public void setGodiste(String godište) {
-        
-    }
-
-    public void setKilometraza() {
-        
-    }
-
-    public void setKilometraza(String kilometraza) {
-        
-    }
-
-    public void setUvoz() {
-        
-    }
-
-    public void setUvoz(String aboolean) {
-        
-    }
-
-    public Object getProdaje() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getProdaja() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getVozila() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getVozilo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getProdaje(Object c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
    
+    @Override
+    public String toString() {
+        return getMarka() + " " + getModel();
+    }
+
+    
+
+    
+    
+    
 }

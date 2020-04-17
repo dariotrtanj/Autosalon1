@@ -14,11 +14,15 @@ import hr.autosalon.autosalon.model.Prodavac;
 import hr.autosalon.autosalon.model.Vozilo;
 import hr.autosalon.autosalon.util.AutosalonException;
 import hr.autosalon.autosalon.util.HibernateUtil;
+
+import hr.autosalon.autosalon.util.Pomocno;
+import hr.autosalon.autosalon.view.SplashScreen;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
@@ -26,77 +30,19 @@ import java.util.logging.Logger;
  */
 public class Start {
 
-  
-    public Start(){
-       /*HibernateUtil.getSessionFactory().openSession();*/
-       
-        /*List<Vozilo> lista = new ArrayList<>();
-        Vozilo v;
-        for (int i = 0; i < 1000; i++) {
-            v=new Vozilo();
-            v.setMarka("generirano" + i);
-            lista.add(v);
-            
-        }*/
+    public Start() {
         
-        /*Vozilo v = new Vozilo();
-        v.setMarka("Volkswagen");
-        v.setModel("Golf");
-        v.setGodiste("godište");
-        v.setKilometraza("kilometraza");
-        v.setCijena(new BigDecimal(10000));
-        v.setUvoz("true");
-        ObradaVozilo ov = new ObradaVozilo(v);
-        try {
-            ov.create();
-            } catch (AutosalonException ex) {
-            Logger.getLogger(Start.class.getName()).log(Level.SEVERE,null, ex);
-        }
         
-        Kupac k = new Kupac();
-        k.setIme("Dario");
-        k.setPrezime("Trtanj");
-        k.setOib("63612978880");
-        k.setEmail("trtanjd@gmail.com");
-        k.setBrojTelefona("098683861");
-        k.setBrojUgovora("369");
-        ObradaKupac ok = new ObradaKupac(k);
-        try {
-            ok.create();
-            } catch (AutosalonException ex) {
-                System.out.println("Spremanje nije prošlo. Razlog:");
-                System.out.println(ex.getPoruka());
-                
-                
-        Prodavac p = new Prodavac();
-        p.setIme("Ivan");
-        p.setPrezime("Ivanov");
-        p.setOib("77995289480");
-        p.setEmail("ivanov@gmail.com");
-        p.setIban("HR5523600003222222223");
-        ObradaProdavac op = new ObradaProdavac(p);
-        try {
-            op.create();
-            } catch(AutosalonException ex){ 
-                 System.out.println("Spremanje nije prošlo. Razlog:");
-                 System.out.println(ex.getPoruka());
-                 
-                 
-       
+        //HibernateUtil.getSessionFactory().openSession();
         
-                 
-                 
-            }
-                
-                
-                
-        }*/
-                
+        //Pomocno.pocetniInsert();
+        
+        new SplashScreen().setVisible(true);
+        
+        
     }
-    
+
     public static void main(String[] args) {
         new Start();
     }
 }
-
-        

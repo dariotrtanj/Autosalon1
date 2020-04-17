@@ -1,0 +1,58 @@
+{
+	"folders": {},
+	"connections": {
+		"mariaDB-170fcb36592-6c51ca04829640e2": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - localhost",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "autosalon",
+				"url": "jdbc:mysql://localhost:3306/autosalon",
+				"home": "MySQL Binaries",
+				"type": "dev",
+				"bootstrap": {
+					"defaultCatalog": "autosalon"
+				}
+			}
+		},
+		"mysql5-170fcfb054c-6ec92252c2c3932c": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "MySQL - localhost",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
+				"home": "MySQL Binaries",
+				"type": "dev"
+			}
+		}
+	},
+	"virtual-models": {
+		"mariaDB-170fcb36592-6c51ca04829640e2": {
+			"autosalon": {
+				"@properties": {
+					"erd.diagram.state": {
+						"serialized": "<diagram version=\"1\" name=\"autosalon\" time=\"202003241251\"><entities><data-source id=\"mariaDB-170fcb36592-6c51ca04829640e2\"><entity id=\"1\" name=\"hibernate_sequence\" fq-name=\"autosalon.hibernate_sequence\" order=\"0\" border-width=\"3\" x=\"0\" y=\"16\"><path name=\"autosalon\"/></entity><entity id=\"2\" name=\"kupac\" fq-name=\"autosalon.kupac\" order=\"1\" x=\"172\" y=\"23\"><path name=\"autosalon\"/></entity><entity id=\"3\" name=\"prodaja\" fq-name=\"autosalon.prodaja\" order=\"2\" x=\"453\" y=\"303\"><path name=\"autosalon\"/></entity><entity id=\"4\" name=\"prodavac\" fq-name=\"autosalon.prodavac\" order=\"3\" x=\"174\" y=\"282\"><path name=\"autosalon\"/></entity><entity id=\"5\" name=\"vozilo\" fq-name=\"autosalon.vozilo\" order=\"4\" x=\"449\" y=\"21\"><path name=\"autosalon\"/></entity></data-source></entities><relations><relation name=\"FKmqvirnyri7pgs6t4hd0wym1p7\" fq-name=\"autosalon.prodaja.FKmqvirnyri7pgs6t4hd0wym1p7\" type=\"fk\" pk-ref=\"2\" fk-ref=\"3\"/><relation name=\"FKnvq3leuplikaf31anrm9iumyq\" fq-name=\"autosalon.prodaja.FKnvq3leuplikaf31anrm9iumyq\" type=\"fk\" pk-ref=\"4\" fk-ref=\"3\"/><relation name=\"FKmbvnuchibo30vilhfa61m57kd\" fq-name=\"autosalon.prodaja.FKmbvnuchibo30vilhfa61m57kd\" type=\"fk\" pk-ref=\"5\" fk-ref=\"3\"/></relations></diagram>"
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}

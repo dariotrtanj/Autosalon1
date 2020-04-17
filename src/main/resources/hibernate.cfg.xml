@@ -4,7 +4,7 @@
         
        <!-- 
         Potrebno je ručno kreirati bazu
-            create database hibernate default character set utf8;
+            create database autosalon default character set utf8;
 
 
         -->
@@ -33,7 +33,7 @@
             create-drop: drop the schema at the end of the session. 
             1. puta create-drop, poslije update
             -->
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hbm2ddl.auto">update</property>
         <!-- dbcp connection pool configuration -->
         <property name="hibernate.dbcp.initialSize">5</property>
         <property name="hibernate.dbcp.maxTotal">20</property>
@@ -45,10 +45,10 @@
         
         
         <!-- Ovdje navodimo naše mapirane klase -->
-        <mapping class="hr.autosalon.hibernate.model.Kupac" />
-        <mapping class="hr.autosalon.hibernate.model.Prodavac" />
-        <mapping class="hr.autosalon.hibernate.model.Vozilo" />
-        <mapping class="hr.autosalon.hibernate.model.Prodaja" />
+        <mapping class="hr.autosalon.autosalon.model.Kupac" />
+        <mapping class="hr.autosalon.autosalon.model.Prodavac" />
+        <mapping class="hr.autosalon.autosalon.model.Vozilo" />
+        <mapping class="hr.autosalon.autosalon.model.Prodaja" />
         
         
     </session-factory>

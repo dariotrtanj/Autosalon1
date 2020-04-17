@@ -22,36 +22,11 @@ public class ObradaProdaja extends Obrada<Prodaja>{
     public ObradaProdaja(){
         super();
     }
-    
-    @Override
-    public Prodaja create() throws AutosalonException{
-        kontrolaCreate();
-        save();
-        nakonSpremanja();
-        return entitet;
-    }
-    
-    @Override
-    public Prodaja update() throws AutosalonException{
-        kontrolaCreate();
-        save();
-        nakonSpremanja();
-        return entitet;
-    }    
-    
-     private void save() {
-        session.beginTransaction();
-        session.save(entitet);
-        entitet.getProdaje();
-        session.save();
-        session.getTransaction().commit();
-    }
-    
-    
-
+  
+  
     @Override
     protected void kontrolaCreate() throws AutosalonException {
-        
+       
     }
 
     @Override
@@ -68,14 +43,23 @@ public class ObradaProdaja extends Obrada<Prodaja>{
     public List<Prodaja> getPodaci() {
        return session.createQuery("from Prodaja").list(); 
     }
-
+    
+    public List<Prodaja> getPodaci(String uvjet) {
+       return session.createQuery("from Prodaja p "
+                + " where concat(p.marka, ' ', p.model) like :uvjet "
+                + " or concat(p.model, ' ', p.marka) like :uvjet ")
+                .setParameter("uvjet", "%" + uvjet + "%")
+                .setMaxResults(20).list();
+        
+        
+    }
+    
     @Override
     protected void nakonSpremanja() throws AutosalonException {
         
     }
 
-   
-
+     
    
 }
 

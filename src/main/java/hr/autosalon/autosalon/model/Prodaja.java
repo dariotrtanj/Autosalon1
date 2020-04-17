@@ -5,6 +5,7 @@
  */
 package hr.autosalon.autosalon.model;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
@@ -15,9 +16,13 @@ import javax.persistence.Table;
  *
  * @author TRTANJ
  */
+@lombok.Getter
+@lombok.Setter
 @Entity
 @Table(name = "prodaja")
 public class Prodaja extends Entitet {
+    
+    private Date datumProdaje;
     
     @OneToOne
     private Kupac kupac;
@@ -28,42 +33,12 @@ public class Prodaja extends Entitet {
     @OneToOne
     private Vozilo vozilo;
 
-    public Kupac getKupac() {
-        return kupac;
-    }
-
-    public void setKupac(Kupac kupac) {
-        this.kupac = kupac;
-    }
-
-    public Prodavac getProdavac() {
-        return prodavac;
-    }
-
-    public void setProdavac(Prodavac prodavac) {
-        this.prodavac = prodavac;
-    }
-
-    public Vozilo getVozilo() {
-        return vozilo;
-    }
-
-    public void setVozilo(Vozilo vozilo) {
-        this.vozilo = vozilo;
-    }
-
-    public Object getVozila() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getProdaje() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getProdaja() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
+
+  @Override
+    public String toString() {
+        return getVozilo().getMarka()+" "+getVozilo().getModel();
+    }
+
     
 }

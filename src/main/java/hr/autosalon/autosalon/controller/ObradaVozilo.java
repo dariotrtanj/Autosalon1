@@ -21,34 +21,10 @@ public class ObradaVozilo extends Obrada<Vozilo>{
     }
 
     public ObradaVozilo() {
+        super();
         
     }
-    
-    
-    
-    @Override
-    public Vozilo create() throws AutosalonException{
-        kontrolaCreate();
-        save();
-        nakonSpremanja();
-        return entitet;
-    }
-    
-    @Override
-    public Vozilo update() throws AutosalonException{
-        kontrolaUpdate();
-        save();
-        nakonSpremanja();
-        return entitet;
-    }
-    
-     private void save() {
-        session.getTransaction();
-        session.save(entitet);
-        entitet.getProdaje();
-        session.save();
-        session.getTransaction().commit();
-    }  
+   
 
     @Override
     protected void kontrolaCreate() throws AutosalonException {
@@ -70,6 +46,15 @@ public class ObradaVozilo extends Obrada<Vozilo>{
         return session.createQuery("from Vozilo").list();
         
     }
+    
+    public List<Vozilo> getPodaci(String uvjet) {
+        return session.createQuery("from Vozilo p "
+                + " where concat(p.marka, ' ', p.model) like :uvjet "
+                + " or concat(p.model, ' ', p.marka) like :uvjet ")
+                .setParameter("uvjet", "%" + uvjet + "%")
+                .setMaxResults(20).list();
+    }
+    
 
     @Override
     protected void nakonSpremanja() throws AutosalonException {

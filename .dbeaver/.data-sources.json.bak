@@ -1,0 +1,58 @@
+{
+	"folders": {},
+	"connections": {
+		"mariaDB-170fcb36592-6c51ca04829640e2": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - localhost",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "autosalon",
+				"url": "jdbc:mysql://localhost:3306/autosalon",
+				"home": "MySQL Binaries",
+				"type": "dev",
+				"bootstrap": {
+					"defaultCatalog": "autosalon"
+				}
+			}
+		},
+		"mysql5-170fcfb054c-6ec92252c2c3932c": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "MySQL - localhost",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
+				"home": "MySQL Binaries",
+				"type": "dev"
+			}
+		}
+	},
+	"virtual-models": {
+		"mariaDB-170fcb36592-6c51ca04829640e2": {
+			"autosalon": {
+				"@properties": {
+					"erd.diagram.state": {
+						"serialized": "<diagram version=\"1\" name=\"autosalon\" time=\"202003221220\"><entities><data-source id=\"mariaDB-170fcb36592-6c51ca04829640e2\"><entity id=\"1\" name=\"kupac\" fq-name=\"autosalon.kupac\" order=\"0\" x=\"33\" y=\"24\"><path name=\"autosalon\"/></entity><entity id=\"2\" name=\"prodaja\" fq-name=\"autosalon.prodaja\" order=\"1\" border-width=\"3\" x=\"372\" y=\"317\"><path name=\"autosalon\"/></entity><entity id=\"3\" name=\"prodavac\" fq-name=\"autosalon.prodavac\" order=\"2\" x=\"20\" y=\"296\"><path name=\"autosalon\"/></entity><entity id=\"4\" name=\"vozilo\" fq-name=\"autosalon.vozilo\" order=\"3\" x=\"361\" y=\"24\"><path name=\"autosalon\"/></entity></data-source></entities><relations><relation name=\"prodaja_ibfk_1\" fq-name=\"autosalon.prodaja.prodaja_ibfk_1\" type=\"fk\" pk-ref=\"1\" fk-ref=\"2\"/><relation name=\"prodaja_ibfk_2\" fq-name=\"autosalon.prodaja.prodaja_ibfk_2\" type=\"fk\" pk-ref=\"3\" fk-ref=\"2\"/><relation name=\"prodaja_ibfk_3\" fq-name=\"autosalon.prodaja.prodaja_ibfk_3\" type=\"fk\" pk-ref=\"4\" fk-ref=\"2\"/></relations></diagram>"
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}

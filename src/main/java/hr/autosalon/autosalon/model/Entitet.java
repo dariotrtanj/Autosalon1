@@ -14,20 +14,13 @@ import javax.persistence.MappedSuperclass;
  *
  * @author TRTANJ
  */
+@lombok.Data
 @MappedSuperclass
 public abstract class Entitet {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer sifra;
-
-    public Integer getSifra() {
-        return sifra;
-    }
-
-    public void setSifra(Integer sifra) {
-        this.sifra = sifra;
-    }
     
     
 }
