@@ -62,7 +62,7 @@ public class ObradaProdavac extends Obrada<Prodavac>{
     @Override
     protected void kontrolaCreate() throws AutosalonException {
        kontrolaEmail();
-       kontrolaLozinka();
+       //kontrolaLozinka();
        
     }
     

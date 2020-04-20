@@ -46,8 +46,8 @@ public class ObradaProdaja extends Obrada<Prodaja>{
     
     public List<Prodaja> getPodaci(String uvjet) {
        return session.createQuery("from Prodaja p "
-                + " where concat(p.marka, ' ', p.model) like :uvjet "
-                + " or concat(p.model, ' ', p.marka) like :uvjet ")
+                + " where concat(p.vozilo.marka, ' ', p.vozilo.model) like :uvjet "
+                + " or concat(p.vozilo.model, ' ', p.vozilo.marka) like :uvjet ")
                 .setParameter("uvjet", "%" + uvjet + "%")
                 .setMaxResults(20).list();
         

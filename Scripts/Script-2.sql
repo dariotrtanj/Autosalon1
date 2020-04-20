@@ -1,1 +1,1 @@
-select *  from prodaja;
+select * from prodavac;

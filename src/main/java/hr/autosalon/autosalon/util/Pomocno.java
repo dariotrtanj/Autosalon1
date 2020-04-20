@@ -102,7 +102,7 @@ public class Pomocno {
             } catch (AutosalonException ex) {
             System.out.println(ex.getPoruka());
         }
-        /*Prodavac p = new Prodavac();
+        Prodavac p = new Prodavac();
         p.setIme("Borna");
         p.setPrezime("Bornić");
         p.setOib("63612978881");
@@ -115,7 +115,7 @@ public class Pomocno {
             obradaProdavac.create();
             } catch (AutosalonException ex) {
             System.out.println(ex.getPoruka());
-        }*/
+        }
         
         
         
